@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dokan Manager BD — a simple, modern shop management dashboard for small businesses in Bangladesh.">
+<title>Dokan Manager BD | Smart Shop Management</title>
+<style>
+:root{--bg:#f5f7fb;--panel:#fff;--ink:#172033;--muted:#6d7890;--line:#e7ebf2;--green:#16845b;--green2:#0f6b49;--pale:#e7f6ef;--blue:#4169e1;--orange:#f59e0b;--red:#e05252;--shadow:0 10px 30px rgba(31,47,79,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.sidebar{background:#102a24;color:#eaf7f0;padding:24px 16px;display:flex;flex-direction:column;gap:26px}.brand{display:flex;align-items:center;gap:12px;padding:0 8px}.brand-icon{width:42px;height:42px;border-radius:13px;background:#d8f6e7;color:#126443;display:grid;place-items:center;font-size:22px;font-weight:900}.brand strong{display:block;font-size:17px;letter-spacing:-.3px}.brand small{color:#9fc8b7}.nav-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#8eafa2;padding:0 12px;margin-bottom:8px}.nav{display:grid;gap:5px}.nav button{border:0;color:#c6ddd2;background:transparent;text-align:left;padding:12px;border-radius:10px;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#21463a;color:#fff}.nav .ico{width:20px;text-align:center;font-size:17px}.sidebar-foot{margin-top:auto;border-top:1px solid #315347;padding:18px 8px 0;color:#a9c7bb;font-size:12px}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px;gap:16px}.crumb{color:var(--muted);font-size:13px}.crumb strong{color:var(--ink)}.top-right{display:flex;align-items:center;gap:16px}.status{border:1px solid #d8eee3;background:#f0fbf5;color:#14774f;border-radius:99px;padding:6px 10px;font-size:12px}.avatar{width:36px;height:36px;background:#dff3e9;color:#146746;border-radius:50%;display:grid;place-items:center;font-weight:800}.content{max-width:1400px;margin:auto;padding:30px 34px 44px}.welcome{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:24px}.welcome h1{font-size:28px;line-height:1.2;letter-spacing:-.8px;margin:0 0 8px}.welcome p{margin:0;color:var(--muted)}.date-chip{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 13px;color:var(--muted);font-size:13px;white-space:nowrap}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:20px}.stat,.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:20px}.stat-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px;gap:8px}.stat-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:18px}.tint-green{background:#e5f7ee}.tint-blue{background:#eaf0ff}.tint-orange{background:#fff3dc}.tint-red{background:#ffebeb}.stat-value{font-size:25px;font-weight:800;letter-spacing:-.6px;margin:12px 0 5px}.stat-note{font-size:12px;color:var(--muted)}.stat-note b{color:var(--green)}.grid-main{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr);gap:20px}.panel{padding:22px;margin-bottom:20px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}.panel-head h2{font-size:16px;margin:0}.panel-head p{font-size:12px;color:var(--muted);margin:4px 0 0}.btn{border:0;border-radius:9px;padding:10px 14px;background:var(--green);color:#fff;font-weight:700;font-size:13px}.btn:hover{background:var(--green2)}.btn-light{background:#f5f7fa;color:#33415a;border:1px solid var(--line)}.btn-light:hover{background:#eaf0f4}.chart{height:210px;display:flex;align-items:end;gap:clamp(7px,2vw,20px);padding:12px 4px 0;border-bottom:1px solid var(--line);position:relative}.bar-wrap{height:100%;flex:1;display:flex;flex-direction:column;justify-content:end;align-items:center;gap:8px;min-width:0}.bar{width:min(34px,78%);background:linear-gradient(180deg,#39b781,#16845b);border-radius:7px 7px 2px 2px;min-height:5px;transition:height .3s}.bar-wrap span{font-size:11px;color:var(--muted)}.legend{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}.quick-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.quick{border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left;padding:14px;display:flex;align-items:center;gap:11px;color:var(--ink)}.quick:hover{border-color:#9bd6bb;background:#f7fcf9}.quick .qicon{width:38px;height:38px;border-radius:11px;background:var(--pale);display:grid;place-items:center;font-size:18px}.quick b{display:block;font-size:13px}.quick small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;color:var(--muted);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:11px 9px;border-bottom:1px solid var(--line)}td{padding:13px 9px;border-bottom:1px solid #f0f2f6;font-size:13px}tbody tr:last-child td{border-bottom:0}.customer{display:flex;align-items:center;gap:9px}.mini-avatar{width:31px;height:31px;border-radius:10px;background:#eaf0ff;color:#4169e1;display:grid;place-items:center;font-size:11px;font-weight:800}.pill{padding:4px 8px;border-radius:99px;font-size:11px;font-weight:700}.paid{background:#e5f7ee;color:#14774f}.pending{background:#fff3dc;color:#9a6400}.low-stock{color:#c43c3c;font-weight:700}.stock-list{display:grid;gap:14px}.stock-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 12px}.stock-name{font-size:13px;font-weight:650}.stock-count{font-size:12px;color:var(--muted)}.track{grid-column:1/-1;height:6px;background:#edf0f5;border-radius:99px;overflow:hidden}.fill{height:100%;background:#e9a23b;border-radius:99px}.fill.ok{background:#26a875}.empty{color:var(--muted);font-size:13px;padding:16px 0}.page{display:none}.page.active{display:block}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field label{font-size:12px;font-weight:700;color:#556176}.field input,.field select{width:100%;border:1px solid #dfe5ee;border-radius:9px;padding:11px;background:#fff;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#52b88b;box-shadow:0 0 0 3px #e4f6ed}.form-actions{display:flex;gap:10px;margin-top:18px}.toast{position:fixed;right:24px;bottom:24px;background:#102a24;color:#fff;padding:13px 18px;border-radius:11px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none;z-index:10}.toast.show{opacity:1;transform:translateY(0)}.footer{text-align:center;color:#929bad;font-size:12px;padding:8px 0 0}.money{font-variant-numeric:tabular-nums}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-main{grid-template-columns:1fr}.topbar{padding:0 22px}.content{padding:24px 22px}}@media(max-width:700px){.app{grid-template-columns:1fr}.sidebar{padding:14px;gap:14px}.brand{padding:0 4px}.nav-label,.sidebar-foot{display:none}.nav{display:flex;overflow-x:auto}.nav button{white-space:nowrap;padding:9px 11px;font-size:12px}.nav .ico{display:none}.topbar{height:60px;padding:0 16px}.status{display:none}.content{padding:20px 14px}.welcome{display:block}.welcome h1{font-size:24px}.date-chip{display:inline-block;margin-top:14px}.stats{gap:10px}.stat{padding:14px}.stat-value{font-size:21px}.stat-head{font-size:12px}.panel{padding:16px}.quick-actions{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.top-right{gap:8px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">দ</div><div><strong>Dokan Manager BD</strong><small>Smart shop management</small></div></div>
+  <div><div class="nav-label">Workspace</div><nav class="nav" aria-label="Main navigation">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+    <button data-page="sales"><span class="ico">৳</span>Sales & Billing</button>
+    <button data-page="inventory"><span class="ico">▤</span>Inventory</button>
+    <button data-page="customers"><span class="ico">♙</span>Customers</button>
+    <button data-page="reports"><span class="ico">▥</span>Reports</button>
+  </nav></div>
+  <div class="sidebar-foot">Made for Bangladesh 🇧🇩<br>Simple tools for growing shops.</div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb">Workspace <span style="padding:0 7px">/</span> <strong id="crumb-name">Dashboard</strong></div><div class="top-right"><span class="status">● Demo workspace</span><div class="avatar">DM</div></div></header>
+<div class="content">
+<section class="page active" id="page-dashboard">
+  <div class="welcome"><div><h1>Good day, Shop Owner 👋</h1><p>Here’s what’s happening with your shop today.</p></div><div class="date-chip" id="today"></div></div>
+  <div class="stats">
+    <article class="stat"><div class="stat-head">Today's Sales <span class="stat-icon tint-green">৳</span></div><div class="stat-value money" id="today-sales">৳ 12,850</div><div class="stat-note"><b>↑ 8.2%</b> vs. yesterday</div></article>
+    <article class="stat"><div class="stat-head">Total Orders <span class="stat-icon tint-blue">▣</span></div><div class="stat-value" id="orders-count">48</div><div class="stat-note">Orders recorded today</div></article>
+    <article class="stat"><div class="stat-head">Products in Stock <span class="stat-icon tint-orange">▤</span></div><div class="stat-value" id="products-count">126</div><div class="stat-note">Across all categories</div></article>
+    <article class="stat"><div class="stat-head">Due Payments <span class="stat-icon tint-red">◷</span></div><div class="stat-value money" id="due-total">৳ 3,450</div><div class="stat-note">From customer accounts</div></article>
+  </div>
+  <div class="grid-main">
+    <div>
+      <section class="panel"><div class="panel-head"><div><h2>Sales overview</h2><p>Your sales performance this week</p></div><div class="legend"><span class="dot"></span> Sales (BDT)</div></div><div class="chart" id="sales-chart" aria-label="Weekly sales chart"></div></section>
+      <section class="panel"><div class="panel-head"><div><h2>Recent transactions</h2><p>Latest activity from your shop</p></div><button class="btn btn-light" data-go="sales">View sales</button></div><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Invoice</th><th>Amount</th><th>Status</th></tr></thead><tbody id="recent-transactions"></tbody></table></div></section>
+    </div>
+    <div>
+      <section class="panel"><div class="panel-head"><div><h2>Quick actions</h2><p>Get things done faster</p></div></div><div class="quick-actions">
+        <button class="quick" data-go="sales"><span class="qicon">＋</span><span><b>New sale</b><small>Create an invoice</small></span></button>
+        <button class="quick" data-go="inventory"><span class="qicon">▤</span><span><b>Add product</b><small>Update your stock</small></span></button>
+        <button class="quick" data-go="customers"><span class="qicon">♙</span><span><b>Add customer</b><small>Save customer details</small></span></button>
+        <button class="quick" data-go="reports"><span class="qicon">▥</span><span><b>View reports</b><small>Review your numbers</small></span></button>
+      </div></section>
+      <section class="panel"><div class="panel-head"><div><h2>Stock watch</h2><p>Products that need attention</p></div><button class="btn btn-light" data-go="inventory">Manage</button></div><div class="stock-list" id="stock-watch"></div></section>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-sales">
+  <div class="welcome"><div><h1>Sales & Billing</h1><p>Record a sale and keep track of customer payments.</p></div></div>
+  <section class="panel"><div class="panel-head"><div><h2>Record a sale</h2><p>Amounts are in Bangladeshi taka (BDT).</p></div></div>
+  <form id="sale-form"><div class="form-grid">
+    <div class="field"><label for="sale-customer">Customer name</label><input id="sale-customer" required placeholder="e.g. Rahim Uddin"></div>
+    <div class="field"><label for="sale-amount">Sale amount (৳)</label><input id="sale-amount" type="number" min="1" step="0.01" required placeholder="1500"></div>
+    <div class="field"><label for="sale-status">Payment status</label><select id="sale-status"><option value="Paid">Paid</option><option value="Due">Due / unpaid</option></select></div>
+    <div class="field"><label for="sale-note">Note (optional)</label><input id="sale-note" placeholder="Items or invoice note"></div>
+  </div><div class="form-actions"><button class="btn" type="submit">Save sale</button><button class="btn btn-light" type="reset">Clear</button></div></form></section>
+  <section class="panel"><div class="panel-head"><div><h2>All transactions</h2><p>New sales appear here immediately in this browser.</p></div></div><div class="table-wrap"><table><thead><tr><th>Customer</th><th>Invoice</th><th>Date</th><th>Amount</th><th>Status</th></tr></thead><tbody id="all-transactions"></tbody></table></div></section>
+</section>
+<section class="page" id="page-inventory">
+  <div class="welcome"><div><h1>Inventory</h1><p>Keep your products and stock levels organized.</p></div></div>
+  <section class="panel"><div class="panel-head"><div><h2>Add a product</h2><p>Track stock available in your shop.</p></div></div>
+  <form id="product-form"><div class="form-grid"><div class="field"><label for="product-name">Product name</label><input id="product-name" required placeholder="e.g. Premium rice 5 kg"></div><div class="field"><label for="product-category">Category</label><input id="product-category" placeholder="e.g. Grocery"></div><div class="field"><label for="product-qty">Quantity in stock</label><input id="product-qty" type="number" min="0" required placeholder="20"></div><div class="field"><label for="product-price">Selling price (৳)</label><input id="product-price" type="number" min="0" step=".01" required placeholder="550"></div></div><div class="form-actions"><button class="btn" type="submit">Add product</button><button class="btn btn-light" type="reset">Clear</button></div></form></section>
+  <section class="panel"><div class="panel-head"><div><h2>Product list</h2><p>Sample products are provided for preview.</p></div></div><div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Stock</th><th>Price</th><th>Action</th></tr></thead><tbody id="product-table"></tbody></table></div></section>
+</section>
+<section class="page" id="page-customers">
+  <div class="welcome"><div><h1>Customers</h1><p>Build your customer list and manage relationships.</p></div></div>
+  <section class="panel"><div class="panel-head"><div><h2>Add a customer</h2><p>Save customer contact details for future visits.</p></div></div>
+  <form id="customer-form"><div class="form-grid"><div class="field"><label for="customer-name">Full name</label><input id="customer-name" required placeholder="Customer name"></div><div class="field"><label for="customer-phone">Phone number</label><input id="customer-phone" type="tel" placeholder="01XXXXXXXXX"></div><div class="field"><label for="customer-area">Area / address</label><input id="customer-area" placeholder="Area, city"></div></div><div class="form-actions"><button class="btn" type="submit">Add customer</button><button class="btn btn-light" type="reset">Clear</button></div></form></section>
+  <section class="panel"><div class="panel-head"><div><h2>Customer directory</h2><p>Your saved customer contacts.</p></div></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Phone</th><th>Area</th></tr></thead><tbody id="customer-table"></tbody></table></div></section>
+</section>
+<section class="page" id="page-reports">
+  <div class="welcome"><div><h1>Reports</h1><p>A quick summary of your shop's current records.</p></div><button class="btn btn-light" id="export-btn">Export sales CSV</button></div>
+  <div class="stats"><article class="stat"><div class="stat-head">Recorded sales</div><div class="stat-value money" id="report-sales">৳ 0</div><div class="stat-note">All transactions in this browser</div></article><article class="stat"><div class="stat-head">Paid amount</div><div class="stat-value money" id="report-paid">৳ 0</div><div class="stat-note">Marked as paid</div></article><article class="stat"><div class="stat-head">Outstanding dues</div><div class="stat-value money" id="report-due">৳ 0</div><div class="stat-note">Marked as due</div></article><article class="stat"><div class="stat-head">Customer records</div><div class="stat-value" id="report-customers">0</div><div class="stat-note">Saved contacts</div></article></div>
+  <section class="panel"><div class="panel-head"><div><h2>About these reports</h2><p>Understand the demo data before using this for real business.</p></div></div><p style="color:var(--muted);max-width:760px">This is a front-end starter version of Dokan Manager BD. Records you add are saved in this browser on this device. They do not sync to another device and are not backed up to a server. The dashboard begins with sample transactions for demonstration. Replace the sample data and add secure authentication, a database and backups before using it for sensitive or mission-critical business records.</p></section>
+</section>
+<div class="footer">© <span id="year"></span> Dokan Manager BD · Built for local businesses in Bangladesh</div>
+</div>
+</main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const money=n=>'৳ '+Number(n||0).toLocaleString('en-BD',{maximumFractionDigits:2});
+const dateNow=new Date();
+document.getElementById('today').textContent=dateNow.toLocaleDateString('en-BD',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+document.getElementById('year').textContent=dateNow.getFullYear();
+const seedSales=[
+{id:'INV-1048',customer:'Rahim Uddin',amount:2850,status:'Paid',date:'Today'},
+{id:'INV-1047',customer:'Nusrat Jahan',amount:1450,status:'Due',date:'Today'},
+{id:'INV-1046',customer:'Karim Store',amount:3200,status:'Paid',date:'Today'},
+{id:'INV-1045',customer:'Sadia Akter',amount:975,status:'Paid',date:'Yesterday'},
+{id:'INV-1044',customer:'Hasan Ali',amount:2100,status:'Due',date:'Yesterday'}
+];
+const seedProducts=[
+{id:1,name:'Premium rice · 5 kg',category:'Grocery',qty:4,price:550},
+{id:2,name:'Soybean oil · 2 L',category:'Grocery',qty:8,price:360},
+{id:3,name:'Laundry detergent',category:'Household',qty:22,price:180},
+{id:4,name:'Mineral water · 1 L',category:'Beverages',qty:35,price:25}
+];
+const seedCustomers=[
+{name:'Rahim Uddin',phone:'01712-345678',area:'Mirpur, Dhaka'},
+{name:'Nusrat Jahan',phone:'01812-345678',area:'Uttara, Dhaka'},
+{name:'Karim Store',phone:'01912-345678',area:'Savar, Dhaka'}
+];
+function load(key,fallback){try{const v=localStorage.getItem('dokan-'+key);return v?JSON.parse(v):fallback}catch(e){return fallback}}
+let sales=load('sales',seedSales),products=load('products',seedProducts),customers=load('customers',seedCustomers);
+function save(){try{localStorage.setItem('dokan-sales',JSON.stringify(sales));localStorage.setItem('dokan-products',JSON.stringify(products));localStorage.setItem('dokan-customers',JSON.stringify(customers))}catch(e){notify('Browser storage is unavailable. Changes may not persist.')}}
+function notify(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toastTimer);window._toastTimer=setTimeout(()=>t.classList.remove('show'),2800)}
+function statusPill(s){return `<span class="pill ${s==='Paid'?'paid':'pending'}">${s}</span>`}
+function renderSales(){
+ const rows=sales.slice().reverse().map(s=>`<tr><td><div class="customer"><div class="mini-avatar">${s.customer.split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase()}</div>${esc(s.customer)}</div></td><td>${esc(s.id)}</td><td>${esc(s.date||'Today')}</td><td class="money">${money(s.amount)}</td><td>${statusPill(s.status)}</td></tr>`).join('');
+ document.getElementById('all-transactions').innerHTML=rows||'<tr><td colspan="5" class="empty">No transactions yet. Record your first sale above.</td></tr>';
+ document.getElementById('recent-transactions').innerHTML=sales.slice(0,4).map(s=>`<tr><td>${esc(s.customer)}</td><td>${esc(s.id)}</td><td class="money">${money(s.amount)}</td><td>${statusPill(s.status)}</td></tr>`).join('');
+ const total=sales.reduce((a,s)=>a+Number(s.amount),0),paid=sales.filter(s=>s.status==='Paid').reduce((a,s)=>a+Number(s.amount),0),due=total-paid;
+ document.getElementById('report-sales').textContent=money(total);document.getElementById('report-paid').textContent=money(paid);document.getElementById('report-due').textContent=money(due);document.getElementById('due-total').textContent=money(due);
+ document.getElementById('orders-count').textContent=sales.length;
+}
+function renderProducts(){
+ document.getElementById('product-table').innerHTML=products.map(p=>`<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.category||'General')}</td><td class="${p.qty<10?'low-stock':''}">${p.qty}</td><td class="money">${money(p.price)}</td><td><button class="btn btn-light" onclick="adjustStock(${p.id})">+ Stock</button> <button class="btn btn-light" onclick="removeProduct(${p.id})">Remove</button></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No products yet. Add your first product above.</td></tr>';
+ document.getElementById('products-count').textContent=products.reduce((a,p)=>a+Number(p.qty),0);
+ const low=products.slice().sort((a,b)=>a.qty-b.qty).slice(0,4);
+ document.getElementById('stock-watch').innerHTML=low.map(p=>`<div class="stock-row"><div class="stock-name">${esc(p.name)}</div><div class="stock-count ${p.qty<10?'low-stock':''}">${p.qty} left</div><div class="track"><div class="fill ${p.qty>=10?'ok':''}" style="width:${Math.min(100,p.qty/40*100)}%"></div></div></div>`).join('')||'<div class="empty">No products in inventory yet.</div>';
+}
+function renderCustomers(){document.getElementById('customer-table').innerHTML=customers.map(c=>`<tr><td><div class="customer"><div class="mini-avatar">${esc(c.name.split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase())}</div><b>${esc(c.name)}</b></div></td><td>${esc(c.phone||'—')}</td><td>${esc(c.area||'—')}</td></tr>`).join('')||'<tr><td colspan="3" class="empty">No customers yet. Add a contact above.</td></tr>';document.getElementById('report-customers').textContent=customers.length}
+function renderChart(){const vals=[5200,7300,6100,9400,7800,11200,12850],days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];document.getElementById('sales-chart').innerHTML=vals.map((v,i)=>`<div class="bar-wrap"><div class="bar" title="${money(v)}" style="height:${v/13000*100}%"></div><span>${days[i]}</span></div>`).join('')}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){renderSales();renderProducts();renderCustomers();renderChart()}
+function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+page));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));const names={dashboard:'Dashboard',sales:'Sales & Billing',inventory:'Inventory',customers:'Customers',reports:'Reports'};document.getElementById('crumb-name').textContent=names[page]||'Dashboard';window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+document.getElementById('sale-form').addEventListener('submit',e=>{e.preventDefault();const customer=document.getElementById('sale-customer').value.trim(),amount=Number(document.getElementById('sale-amount').value),status=document.getElementById('sale-status').value;if(!customer||amount<=0)return; sales.unshift({id:'INV-'+(1049+sales.length),customer,amount,status,date:'Today'});if(!customers.some(c=>c.name.toLowerCase()===customer.toLowerCase()))customers.push({name:customer,phone:'',area:''});save();render();e.target.reset();notify('Sale saved successfully.')});
+document.getElementById('product-form').addEventListener('submit',e=>{e.preventDefault();products.push({id:Date.now(),name:document.getElementById('product-name').value.trim(),category:document.getElementById('product-category').value.trim()||'General',qty:Number(document.getElementById('product-qty').value),price:Number(document.getElementById('product-price').value)});save();render();e.target.reset();notify('Product added to inventory.')});
+document.getElementById('customer-form').addEventListener('submit',e=>{e.preventDefault();customers.push({name:document.getElementById('customer-name').value.trim(),phone:document.getElementById('customer-phone').value.trim(),area:document.getElementById('customer-area').value.trim()});save();render();e.target.reset();notify('Customer added successfully.')});
+window.adjustStock=id=>{const p=products.find(x=>x.id===id);if(!p)return;const n=prompt('How many units would you like to add?', '10');if(n===null)return;const v=Number(n);if(!Number.isFinite(v)||v<0){notify('Please enter a valid quantity.');return}p.qty+=v;save();render();notify('Stock updated.')};
+window.removeProduct=id=>{if(!confirm('Remove this product from inventory?'))return;products=products.filter(p=>p.id!==id);save();render();notify('Product removed.')};
+document.getElementById('export-btn').addEventListener('click',()=>{const rows=[['Invoice','Customer','Date','Amount BDT','Status'],...sales.map(s=>[s.id,s.customer,s.date||'Today',s.amount,s.status])];const csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));a.download='dokan-manager-sales.csv';a.click();URL.revokeObjectURL(a.href);notify('Sales CSV exported.')});
+render();
+</script>
+</body>
+</html>
